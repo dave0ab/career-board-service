@@ -94,7 +94,7 @@ class PostServiceTest {
 
     @Test
     void findById() {
-        Long postId = 1L;
+        String postId = "Random";
         Post post = new Post();
         when(postRepository.findById(postId)).thenReturn(Optional.of(post));
 

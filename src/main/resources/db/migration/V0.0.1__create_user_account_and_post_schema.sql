@@ -11,10 +11,10 @@ CREATE TABLE user_account (
 );
 
 CREATE TABLE user_post (
-    post_id BIGSERIAL PRIMARY KEY,             -- Auto-generated unique ID for each post
-    user_id BIGINT NOT NULL,                   -- Foreign key referencing the user_account table
-    title VARCHAR(255) NOT NULL,               -- Title of the post, required
-    content TEXT NOT NULL,                     -- Content of the post, required
+    post_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),  -- UUID as the primary key
+    user_id BIGINT NOT NULL,                             -- Foreign key referencing the user_account table
+    title VARCHAR(255) NOT NULL,                         -- Title of the post, required
+    content TEXT NOT NULL,                               -- Content of the post, required
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, -- Timestamp for when the post was created
     CONSTRAINT fk_user FOREIGN KEY (user_id) REFERENCES user_account(user_id) ON DELETE CASCADE
 );

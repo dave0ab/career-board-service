@@ -61,7 +61,7 @@ public class PostService {
         return this.postRepository.findByUserUserIdAndStatus(userId, PostLifecycle.PUBLISHED);
     }
 
-    public Optional<Post> findById(Long postId) {
+    public Optional<Post> findById(String postId) {
         return this.postRepository.findById(postId);
     }
 }

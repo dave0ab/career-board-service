@@ -14,5 +14,5 @@ public class PostDTO {
     private String title;
     private String content;
     private String status;
-    private Long postId;
+    private String  postId;
 }
